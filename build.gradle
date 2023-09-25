@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    //hey gradle, i need mysql driver, 다운받아서 세팅해줘 라는 코드임.
+    implementation 'com.mysql:mysql-connector-j:8.1.0';
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+
+//프젝 새로생성,빌드시스템 그래들로/maven repository에서 mysql connector/j 찾아서
+//build.gradle dependencies {엘추가
+//코끼리버튼눌러 적용}
